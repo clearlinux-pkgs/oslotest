@@ -4,7 +4,7 @@
 #
 Name     : oslotest
 Version  : 1.11.0
-Release  : 16
+Release  : 17
 URL      : http://tarballs.openstack.org/oslotest/oslotest-1.11.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-1.11.0.tar.gz
 Summary  : Oslo test framework
@@ -24,6 +24,7 @@ BuildRequires : extras
 BuildRequires : extras-python
 BuildRequires : fixtures-python
 BuildRequires : flake8-python
+BuildRequires : funcsigs-python
 BuildRequires : hacking
 BuildRequires : linecache2-python
 BuildRequires : markupsafe-python
@@ -80,6 +81,11 @@ bin components for the oslotest package.
 %package python
 Summary: python components for the oslotest package.
 Group: Default
+Requires: fixtures-python
+Requires: mox3-python
+Requires: six-python
+Requires: testrepository-python
+Requires: testtools-python
 
 %description python
 python components for the oslotest package.
