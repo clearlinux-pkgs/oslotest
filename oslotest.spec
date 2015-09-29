@@ -4,7 +4,7 @@
 #
 Name     : oslotest
 Version  : 1.11.0
-Release  : 17
+Release  : 18
 URL      : http://tarballs.openstack.org/oslotest/oslotest-1.11.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-1.11.0.tar.gz
 Summary  : Oslo test framework
