@@ -1,5 +1,5 @@
 PKG_NAME := oslotest
-URL := http://tarballs.openstack.org/oslotest/oslotest-1.12.0.tar.gz
+URL := http://tarballs.openstack.org/oslotest/oslotest-2.0.0.tar.gz
 ARCHIVES :=
 
 include ../common/Makefile.common
