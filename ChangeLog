@@ -1,6 +1,19 @@
 CHANGES
 =======
 
+2.3.0
+-----
+
+* Add some gitignore files
+
+2.2.0
+-----
+
+* move unit tests into the oslotest package
+* Updated from global requirements
+* Hack to get back stopall cleanup behavior feature
+* Fix misspelling
+
 2.1.0
 -----
 
