@@ -1,11 +1,18 @@
 CHANGES
 =======
 
-2.4.0
+2.6.0
 -----
 
 * Updated from global requirements
-* Update .gitreview for stable/mitaka
+
+2.5.0
+-----
+
+* Remove mockpatch re-implementations
+* Updated from global requirements
+* Updated from global requirements
+* Updated from global requirements
 
 2.3.0
 -----
