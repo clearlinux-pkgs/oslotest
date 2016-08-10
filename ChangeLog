@@ -1,6 +1,14 @@
 CHANGES
 =======
 
+2.8.0
+-----
+
+* Import mock so that it works on Python 3.x
+* Fix parameters of assertEqual are misplaced
+* Updated from global requirements
+* Add Python 3.5 classifier and venv
+
 2.7.0
 -----
 
