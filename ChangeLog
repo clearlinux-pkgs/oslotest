@@ -1,6 +1,16 @@
 CHANGES
 =======
 
+2.10.0
+------
+
+* Updated from global requirements
+
+2.9.0
+-----
+
+* Updated from global requirements
+
 2.8.0
 -----
 
@@ -8,6 +18,7 @@ CHANGES
 * Fix parameters of assertEqual are misplaced
 * Updated from global requirements
 * Add Python 3.5 classifier and venv
+* A DisableModules fixture that removes modules from path
 
 2.7.0
 -----
