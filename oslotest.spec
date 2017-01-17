@@ -6,7 +6,7 @@
 #
 Name     : oslotest
 Version  : 2.11.0
-Release  : 37
+Release  : 38
 URL      : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz.asc
@@ -30,7 +30,6 @@ BuildRequires : extras-python
 BuildRequires : fixtures-python
 BuildRequires : flake8-python
 BuildRequires : hacking
-BuildRequires : imagesize-python
 BuildRequires : linecache2-python
 BuildRequires : markupsafe-python
 BuildRequires : mccabe-python
@@ -99,7 +98,7 @@ python components for the oslotest package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484558961
+export SOURCE_DATE_EPOCH=1484680684
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -109,7 +108,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1484558961
+export SOURCE_DATE_EPOCH=1484680684
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
