@@ -6,7 +6,7 @@
 #
 Name     : oslotest
 Version  : 2.11.0
-Release  : 38
+Release  : 39
 URL      : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz.asc
@@ -15,6 +15,16 @@ Group    : Development/Tools
 License  : Apache-2.0
 Requires: oslotest-bin
 Requires: oslotest-python
+Requires: debtcollector
+Requires: fixtures
+Requires: mock
+Requires: mox3
+Requires: os-client-config
+Requires: python-mock
+Requires: python-subunit
+Requires: six
+Requires: testrepository
+Requires: testtools
 BuildRequires : Babel-python
 BuildRequires : Jinja2
 BuildRequires : Pygments
@@ -24,7 +34,6 @@ BuildRequires : configparser-python
 BuildRequires : coverage-python
 BuildRequires : discover-python
 BuildRequires : docutils-python
-BuildRequires : enum34-python
 BuildRequires : extras
 BuildRequires : extras-python
 BuildRequires : fixtures-python
@@ -83,11 +92,6 @@ bin components for the oslotest package.
 %package python
 Summary: python components for the oslotest package.
 Group: Default
-Requires: fixtures-python
-Requires: mox3-python
-Requires: six-python
-Requires: testrepository-python
-Requires: testtools-python
 
 %description python
 python components for the oslotest package.
@@ -98,7 +102,7 @@ python components for the oslotest package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1484680684
+export SOURCE_DATE_EPOCH=1488595151
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -108,7 +112,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1484680684
+export SOURCE_DATE_EPOCH=1488595151
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
