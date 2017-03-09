@@ -6,7 +6,7 @@
 #
 Name     : oslotest
 Version  : 2.11.0
-Release  : 39
+Release  : 40
 URL      : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslotest/oslotest-2.11.0.tar.gz.asc
@@ -102,7 +102,7 @@ python components for the oslotest package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1488595151
+export SOURCE_DATE_EPOCH=1489034849
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
@@ -112,7 +112,7 @@ export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 PYTHONPATH=%{buildroot}/usr/lib/python2.7/site-packages python2 setup.py test || :
 %install
-export SOURCE_DATE_EPOCH=1488595151
+export SOURCE_DATE_EPOCH=1489034849
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
