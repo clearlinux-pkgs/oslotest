@@ -1,6 +1,30 @@
 CHANGES
 =======
 
+2.14.0
+------
+
+* Updated from global requirements
+* [Fix gate]Update test requirement
+* Updated from global requirements
+* Update reno for stable/ocata
+* Updated from global requirements
+
+2.13.0
+------
+
+* Add Constraints support
+* Show team and repo badges on README
+
+2.12.0
+------
+
+* Updated from global requirements
+* Add reno for release notes management
+* Updated from global requirements
+* Updated from global requirements
+* Changed the home-page link
+
 2.11.0
 ------
 
