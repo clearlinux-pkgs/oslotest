@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xB9069B1335700CDC (infra-root@openstack.org)
 #
 Name     : oslotest
-Version  : 2.14.0
-Release  : 42
-URL      : http://tarballs.openstack.org/oslotest/oslotest-2.14.0.tar.gz
-Source0  : http://tarballs.openstack.org/oslotest/oslotest-2.14.0.tar.gz
-Source99 : http://tarballs.openstack.org/oslotest/oslotest-2.14.0.tar.gz.asc
+Version  : 2.15.0
+Release  : 43
+URL      : http://tarballs.openstack.org/oslotest/oslotest-2.15.0.tar.gz
+Source0  : http://tarballs.openstack.org/oslotest/oslotest-2.15.0.tar.gz
+Source99 : http://tarballs.openstack.org/oslotest/oslotest-2.15.0.tar.gz.asc
 Summary  : Oslo test framework
 Group    : Development/Tools
 License  : Apache-2.0
@@ -54,19 +54,22 @@ python components for the oslotest package.
 
 
 %prep
-%setup -q -n oslotest-2.14.0
+%setup -q -n oslotest-2.15.0
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1489785191
+export SOURCE_DATE_EPOCH=1490890382
 python2 setup.py build -b py2
 python3 setup.py build -b py3
 
 %install
-export SOURCE_DATE_EPOCH=1489785191
+export SOURCE_DATE_EPOCH=1490890382
 rm -rf %{buildroot}
 python2 -tt setup.py build -b py2 install --root=%{buildroot} --force
 python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
+echo ----[ mark ]----
+cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
+echo ----[ mark ]----
 
 %files
 %defattr(-,root,root,-)
@@ -79,5 +82,4 @@ python3 -tt setup.py build -b py3 install --root=%{buildroot} --force
 
 %files python
 %defattr(-,root,root,-)
-/usr/lib/python2*/*
-/usr/lib/python3*/*
+/usr/lib/python*/*
