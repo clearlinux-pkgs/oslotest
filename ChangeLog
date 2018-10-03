@@ -1,6 +1,16 @@
 CHANGES
 =======
 
+3.7.0
+-----
+
+* Add DEFAULT\_TIMEOUT and TIMEOUT\_SCALING\_FACTOR
+* Fix requirements check ci in oslotest
+* add python 3.6 unit test job
+* import zuul job settings from project-config
+* Update reno for stable/rocky
+* Add release note link in README
+
 3.6.0
 -----
 
