@@ -6,17 +6,17 @@
 #
 Name     : oslotest
 Version  : 3.7.0
-Release  : 48
+Release  : 49
 URL      : http://tarballs.openstack.org/oslotest/oslotest-3.7.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-3.7.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslotest/oslotest-3.7.0.tar.gz.asc
 Summary  : Oslo test framework
 Group    : Development/Tools
 License  : Apache-2.0
-Requires: oslotest-bin
-Requires: oslotest-python3
-Requires: oslotest-license
-Requires: oslotest-python
+Requires: oslotest-bin = %{version}-%{release}
+Requires: oslotest-license = %{version}-%{release}
+Requires: oslotest-python = %{version}-%{release}
+Requires: oslotest-python3 = %{version}-%{release}
 Requires: debtcollector
 Requires: fixtures
 Requires: mox3
@@ -30,8 +30,11 @@ BuildRequires : buildreq-distutils3
 BuildRequires : pbr
 
 %description
+========================
 Team and repository tags
-        ========================
+========================
+.. image:: https://governance.openstack.org/tc/badges/oslotest.svg
+:target: https://governance.openstack.org/tc/reference/tags/index.html
 
 %package bin
 Summary: bin components for the oslotest package.
@@ -76,13 +79,14 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1538578535
+export SOURCE_DATE_EPOCH=1551039367
+export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 
 %install
 rm -rf %{buildroot}
-mkdir -p %{buildroot}/usr/share/doc/oslotest
-cp LICENSE %{buildroot}/usr/share/doc/oslotest/LICENSE
+mkdir -p %{buildroot}/usr/share/package-licenses/oslotest
+cp LICENSE %{buildroot}/usr/share/package-licenses/oslotest/LICENSE
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
@@ -99,7 +103,7 @@ echo ----[ mark ]----
 
 %files license
 %defattr(0644,root,root,0755)
-/usr/share/doc/oslotest/LICENSE
+/usr/share/package-licenses/oslotest/LICENSE
 
 %files python
 %defattr(-,root,root,-)
