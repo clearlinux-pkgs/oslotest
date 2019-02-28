@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x1A541148054E9E38 (infra-root@openstack.org)
 #
 Name     : oslotest
-Version  : 3.7.0
-Release  : 49
-URL      : http://tarballs.openstack.org/oslotest/oslotest-3.7.0.tar.gz
-Source0  : http://tarballs.openstack.org/oslotest/oslotest-3.7.0.tar.gz
-Source99 : http://tarballs.openstack.org/oslotest/oslotest-3.7.0.tar.gz.asc
+Version  : 3.7.1
+Release  : 50
+URL      : http://tarballs.openstack.org/oslotest/oslotest-3.7.1.tar.gz
+Source0  : http://tarballs.openstack.org/oslotest/oslotest-3.7.1.tar.gz
+Source99 : http://tarballs.openstack.org/oslotest/oslotest-3.7.1.tar.gz.asc
 Summary  : Oslo test framework
 Group    : Development/Tools
 License  : Apache-2.0
@@ -72,14 +72,14 @@ python3 components for the oslotest package.
 
 
 %prep
-%setup -q -n oslotest-3.7.0
+%setup -q -n oslotest-3.7.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1551039367
+export SOURCE_DATE_EPOCH=1551396198
 export MAKEFLAGS=%{?_smp_mflags}
 python3 setup.py build
 

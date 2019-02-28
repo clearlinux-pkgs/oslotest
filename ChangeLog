@@ -1,10 +1,21 @@
 CHANGES
 =======
 
+3.7.1
+-----
+
+* Change python3.5 job to python3.7 job on Stein+
+* Update hacking version
+* Change openstack-dev to openstack-discuss
+* Title underline too long
+* Don't quote {posargs} in tox.ini
+* Fix nits in timeout change
+
 3.7.0
 -----
 
 * Add DEFAULT\_TIMEOUT and TIMEOUT\_SCALING\_FACTOR
+* Use templates for cover and lower-constraints
 * Fix requirements check ci in oslotest
 * add python 3.6 unit test job
 * import zuul job settings from project-config
