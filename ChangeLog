@@ -1,6 +1,17 @@
 CHANGES
 =======
 
+3.8.0
+-----
+
+* Sync Sphinx requirement
+* Replace git.openstack.org URLs with opendev.org URLs
+* Stop testing mock functionality
+* OpenDev Migration Patch
+* Dropping the py35 testing
+* Replace openstack.org git:// URLs with https://
+* Update master for stable/stein
+
 3.7.1
 -----
 
