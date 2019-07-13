@@ -6,7 +6,7 @@
 #
 Name     : oslotest
 Version  : 3.8.0
-Release  : 52
+Release  : 53
 URL      : http://tarballs.openstack.org/oslotest/oslotest-3.8.0.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-3.8.0.tar.gz
 Source99 : http://tarballs.openstack.org/oslotest/oslotest-3.8.0.tar.gz.asc
