@@ -1,6 +1,13 @@
 CHANGES
 =======
 
+3.9.0
+-----
+
+* Invoke correct python version in shell scripts
+* Switch to Ussuri jobs
+* Update master for stable/train
+
 3.8.1
 -----
 

@@ -3,7 +3,5 @@ barbican
 ironic
 keystone
 os-xenapi
-oslo.upgradecheck
 python-troveclient
-sphinx-feature-classification
 tempest
