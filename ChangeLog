@@ -1,6 +1,18 @@
 CHANGES
 =======
 
+4.0.0
+-----
+
+* Remove 'oslotest.functional'
+* Remove 'oslotest.moxstubout' module
+* remove outdated header
+* gitignore: Ignore reno artefacts
+* [ussuri][goal] Drop python 2.7 support and testing
+* trivial: Cleanup of doc config file
+* tox: Trivial cleanup
+* tools: Default to Python 3
+
 3.9.0
 -----
 
@@ -31,6 +43,7 @@ CHANGES
 * Update hacking version
 * Change openstack-dev to openstack-discuss
 * Title underline too long
+* Remove stestr from requirements.txt
 * Don't quote {posargs} in tox.ini
 * Fix nits in timeout change
 

@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x4F398DEAE440091C (infra-root@openstack.org)
 #
 Name     : oslotest
-Version  : 3.9.0
-Release  : 57
-URL      : http://tarballs.openstack.org/oslotest/oslotest-3.9.0.tar.gz
-Source0  : http://tarballs.openstack.org/oslotest/oslotest-3.9.0.tar.gz
-Source1  : http://tarballs.openstack.org/oslotest/oslotest-3.9.0.tar.gz.asc
+Version  : 4.0.0
+Release  : 58
+URL      : http://tarballs.openstack.org/oslotest/oslotest-4.0.0.tar.gz
+Source0  : http://tarballs.openstack.org/oslotest/oslotest-4.0.0.tar.gz
+Source1  : http://tarballs.openstack.org/oslotest/oslotest-4.0.0.tar.gz.asc
 Summary  : Oslo test framework
 Group    : Development/Tools
 License  : Apache-2.0
@@ -19,31 +19,43 @@ Requires: oslotest-python = %{version}-%{release}
 Requires: oslotest-python3 = %{version}-%{release}
 Requires: debtcollector
 Requires: fixtures
-Requires: mox3
 Requires: os-client-config
 Requires: python-mock
 Requires: python-subunit
 Requires: six
-Requires: stestr
 Requires: testtools
 BuildRequires : buildreq-distutils3
 BuildRequires : debtcollector
 BuildRequires : fixtures
-BuildRequires : mox3
 BuildRequires : os-client-config
 BuildRequires : pbr
 BuildRequires : python-mock
 BuildRequires : python-subunit
 BuildRequires : six
-BuildRequires : stestr
 BuildRequires : testtools
 
 %description
 ========================
 Team and repository tags
 ========================
+
 .. image:: https://governance.openstack.org/tc/badges/oslotest.svg
-:target: https://governance.openstack.org/tc/reference/tags/index.html
+    :target: https://governance.openstack.org/tc/reference/tags/index.html
+
+.. Change things from this point on
+
+=====================================================
+oslotest -- OpenStack Testing Framework and Utilities
+=====================================================
+
+The Oslo Test framework provides common fixtures, support for debugging, and
+better support for mocking results.
+
+* Free software: Apache license
+* Documentation: https://docs.openstack.org/oslotest/latest/
+* Source: https://opendev.org/openstack/oslotest
+* Bugs: https://bugs.launchpad.net/oslotest
+* Release notes: https://docs.openstack.org/releasenotes/oslotest
 
 %package bin
 Summary: bin components for the oslotest package.
@@ -75,21 +87,22 @@ python components for the oslotest package.
 Summary: python3 components for the oslotest package.
 Group: Default
 Requires: python3-core
+Provides: pypi(oslotest)
 
 %description python3
 python3 components for the oslotest package.
 
 
 %prep
-%setup -q -n oslotest-3.9.0
-cd %{_builddir}/oslotest-3.9.0
+%setup -q -n oslotest-4.0.0
+cd %{_builddir}/oslotest-4.0.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1578416203
+export SOURCE_DATE_EPOCH=1583162035
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -106,7 +119,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/oslotest
-cp %{_builddir}/oslotest-3.9.0/LICENSE %{buildroot}/usr/share/package-licenses/oslotest/57aed0b0f74e63f6b85cce11bce29ba1710b422b
+cp %{_builddir}/oslotest-4.0.0/LICENSE %{buildroot}/usr/share/package-licenses/oslotest/57aed0b0f74e63f6b85cce11bce29ba1710b422b
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
