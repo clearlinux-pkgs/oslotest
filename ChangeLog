@@ -1,6 +1,12 @@
 CHANGES
 =======
 
+4.1.0
+-----
+
+* Switch to unittest.mock from mock
+* Remove os-client-config and debtcollector
+
 4.0.0
 -----
 
