@@ -5,11 +5,11 @@
 # Source0 file verified with key 0x4F398DEAE440091C (infra-root@openstack.org)
 #
 Name     : oslotest
-Version  : 4.1.0
-Release  : 60
-URL      : http://tarballs.openstack.org/oslotest/oslotest-4.1.0.tar.gz
-Source0  : http://tarballs.openstack.org/oslotest/oslotest-4.1.0.tar.gz
-Source1  : http://tarballs.openstack.org/oslotest/oslotest-4.1.0.tar.gz.asc
+Version  : 4.2.0
+Release  : 61
+URL      : http://tarballs.openstack.org/oslotest/oslotest-4.2.0.tar.gz
+Source0  : http://tarballs.openstack.org/oslotest/oslotest-4.2.0.tar.gz
+Source1  : http://tarballs.openstack.org/oslotest/oslotest-4.2.0.tar.gz.asc
 Summary  : Oslo test framework
 Group    : Development/Tools
 License  : Apache-2.0
@@ -18,12 +18,14 @@ Requires: oslotest-license = %{version}-%{release}
 Requires: oslotest-python = %{version}-%{release}
 Requires: oslotest-python3 = %{version}-%{release}
 Requires: fixtures
+Requires: python-mock
 Requires: python-subunit
 Requires: six
 Requires: testtools
 BuildRequires : buildreq-distutils3
 BuildRequires : fixtures
 BuildRequires : pbr
+BuildRequires : python-mock
 BuildRequires : python-subunit
 BuildRequires : six
 BuildRequires : testtools
@@ -66,9 +68,10 @@ Summary: python3 components for the oslotest package.
 Group: Default
 Requires: python3-core
 Provides: pypi(oslotest)
+Requires: pypi(six)
+Requires: pypi(mock)
 Requires: pypi(python_subunit)
 Requires: pypi(testtools)
-Requires: pypi(six)
 Requires: pypi(fixtures)
 
 %description python3
@@ -76,15 +79,15 @@ python3 components for the oslotest package.
 
 
 %prep
-%setup -q -n oslotest-4.1.0
-cd %{_builddir}/oslotest-4.1.0
+%setup -q -n oslotest-4.2.0
+cd %{_builddir}/oslotest-4.2.0
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1585681092
+export SOURCE_DATE_EPOCH=1585957307
 # -Werror is for werrorists
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
@@ -101,7 +104,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/oslotest
-cp %{_builddir}/oslotest-4.1.0/LICENSE %{buildroot}/usr/share/package-licenses/oslotest/57aed0b0f74e63f6b85cce11bce29ba1710b422b
+cp %{_builddir}/oslotest-4.2.0/LICENSE %{buildroot}/usr/share/package-licenses/oslotest/57aed0b0f74e63f6b85cce11bce29ba1710b422b
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
