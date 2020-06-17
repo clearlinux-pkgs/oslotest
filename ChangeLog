@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+4.4.0
+-----
+
+
 4.3.0
 -----
 
@@ -11,6 +15,7 @@ CHANGES
 * Add release notes links to doc index
 * Add Python3 victoria unit tests
 * Update master for stable/ussuri
+* Revert "Revert "Switch to unittest.mock from mock""
 
 4.2.0
 -----
