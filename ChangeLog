@@ -1,6 +1,10 @@
 CHANGES
 =======
 
+4.4.1
+-----
+
+
 4.4.0
 -----
 
@@ -10,6 +14,7 @@ CHANGES
 
 * Stop to use the \_\_future\_\_ module
 * Switch to newer openstackdocstheme and reno versions
+* Align contributing doc with oslo's policy
 * Bump default tox env from py37 to py38
 * Add py38 package metadata
 * Add release notes links to doc index

@@ -5,11 +5,11 @@
 # Source0 file verified with key 0xC12B8E73B30F2FC8 (infra-root@openstack.org)
 #
 Name     : oslotest
-Version  : 4.4.0
-Release  : 63
-URL      : http://tarballs.openstack.org/oslotest/oslotest-4.4.0.tar.gz
-Source0  : http://tarballs.openstack.org/oslotest/oslotest-4.4.0.tar.gz
-Source1  : http://tarballs.openstack.org/oslotest/oslotest-4.4.0.tar.gz.asc
+Version  : 4.4.1
+Release  : 64
+URL      : http://tarballs.openstack.org/oslotest/oslotest-4.4.1.tar.gz
+Source0  : http://tarballs.openstack.org/oslotest/oslotest-4.4.1.tar.gz
+Source1  : http://tarballs.openstack.org/oslotest/oslotest-4.4.1.tar.gz.asc
 Summary  : Oslo test framework
 Group    : Development/Tools
 License  : Apache-2.0
@@ -73,15 +73,15 @@ python3 components for the oslotest package.
 
 
 %prep
-%setup -q -n oslotest-4.4.0
-cd %{_builddir}/oslotest-4.4.0
+%setup -q -n oslotest-4.4.1
+cd %{_builddir}/oslotest-4.4.1
 
 %build
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1592411407
+export SOURCE_DATE_EPOCH=1600109894
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -97,7 +97,7 @@ python3 setup.py build
 export MAKEFLAGS=%{?_smp_mflags}
 rm -rf %{buildroot}
 mkdir -p %{buildroot}/usr/share/package-licenses/oslotest
-cp %{_builddir}/oslotest-4.4.0/LICENSE %{buildroot}/usr/share/package-licenses/oslotest/57aed0b0f74e63f6b85cce11bce29ba1710b422b
+cp %{_builddir}/oslotest-4.4.1/LICENSE %{buildroot}/usr/share/package-licenses/oslotest/57aed0b0f74e63f6b85cce11bce29ba1710b422b
 python3 -tt setup.py build  install --root=%{buildroot}
 echo ----[ mark ]----
 cat %{buildroot}/usr/lib/python3*/site-packages/*/requires.txt || :
