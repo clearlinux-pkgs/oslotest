@@ -6,7 +6,7 @@
 #
 Name     : oslotest
 Version  : 4.4.1
-Release  : 64
+Release  : 65
 URL      : http://tarballs.openstack.org/oslotest/oslotest-4.4.1.tar.gz
 Source0  : http://tarballs.openstack.org/oslotest/oslotest-4.4.1.tar.gz
 Source1  : http://tarballs.openstack.org/oslotest/oslotest-4.4.1.tar.gz.asc
